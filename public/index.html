@@ -1,0 +1,59 @@
+<!-- Página principal do site -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abertura de Chamado</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  <link rel="shortcut icon" href="image/suporte.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-bullhorn"></i> Abertura de Chamado</h1>
+      <div style="height: 2px; background: linear-gradient(to right, transparent, #7e0000, transparent); margin-bottom: 1rem;"></div>
+    <form id="chamadoForm">
+      <label for="local">Local</label>
+        <select id="categoria" required>
+          <option value="">Selecione</option>
+          <option value="Laboratório">Laboratório</option>
+          <option value="Carrinho">Carrinho</option>
+          <option value="Sala">Sala</option>
+          <option value="Multimeios">Multimeios</option>
+        </select> 
+       <div id="local-container" style="display: none;">
+        <label>Especifique:</label>
+          <div id="local-checkboxes"></div>
+        </div>
+      
+      <label for="local">Equipamento(s) com problema:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="equipamentos" value="Computador"><span class="custom-checkbox"></span>Computador</label>
+        <label><input type="checkbox" name="equipamentos" value="Monitor"><span class="custom-checkbox"></span>Monitor</label>
+        <label><input type="checkbox" name="equipamentos" value="Mouse"><span class="custom-checkbox"></span>Mouse</label>
+        <label><input type="checkbox" name="equipamentos" value="Teclado"><span class="custom-checkbox"></span>Teclado</label>
+        <label><input type="checkbox" name="equipamentos" value="Outro"><span class="custom-checkbox"></span>Outro (especifique no campo "Problema")</label>
+      </div>
+
+        <label for="professor">Professor</label>
+        <input id="professor" name="professor" type="text" placeholder="Nome do professor" required />
+      
+      <div id="numero-container" style="display: none;">
+        <label for="numero">Nº do PC
+        </label>
+        <input id="numero" name="numero" type="number" min="0" max="30" placeholder="Número do PC" required />
+      </div>
+
+
+      <label for="problema">Problema</label>
+      <textarea id="problema" name="problema" rows="5" placeholder="Descreva o problema..." required></textarea>
+
+      <button type="submit">Enviar Chamado</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
