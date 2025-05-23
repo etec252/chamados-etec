@@ -3,7 +3,7 @@
 const express = require('express');
 const path = require('path');
 const admin = require('firebase-admin');
-const serviceAccount = require('./chave-firebase.json');
+const serviceAccount = JSON.parse(process.env.FIREBASE_CREDENTIALS);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
